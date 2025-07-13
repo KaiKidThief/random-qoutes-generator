@@ -14,13 +14,15 @@ export default function Content(){
     const [qoute, setQoute] = useState("CLICK THE BUTTON TO GET THE QOUTES");
     const [author, setAuthor] = useState("");
     const [loading, setLoading] = useState(false);
+    const apiKey = import.meta.env.VITE_API_KEY;
+
 
 const fetchQuote = async () => {
     setLoading(true);
     try {
       const response = await fetch("https://api.api-ninjas.com/v1/quotes", {
         headers: {
-          'X-Api-Key': '', // YOUR API KEY 
+          'X-Api-Key': apiKey, // YOUR API KEY 
         }
       });
 
